@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- bean definitions start -->
+	<bean class="example.spring.core.Address" id="addr">
+		<property name="city" value="Nashik" />
+		<property name="pincode" value="422001" />
+	</bean>
+
+	<bean class="example.spring.core.Address" id="addr2">
+		<property name="city" value="Pune" />
+		<property name="pincode" value="411015" />
+	</bean>
+	<bean class="example.spring.core.Customer" id="currentCustomer">
+		<property name="name" value="Monika" />
+		<property name="CustId" value="C24" />
+		<property name="age" value="29"/>
+		<!-- <property name="parmantAddress" ref="addr2"/> -->
+		<property name="parmantAddress"> 
+		<ref bean="addr2"/>
+		</property>
+	</bean>
+
+
+</beans>
